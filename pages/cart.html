@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - MyStore</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar (with cart button) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">MyStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact-us.html">Contact</a></li>
+
+                    <!-- Cart Button -->
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-warning position-relative " href="./cart.html">
+                            <i class="fas fa-shopping-cart "></i> Cart
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                2
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Your Shopping Cart</h2>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- Product Row 1 -->
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../images/g2.jpg" alt="Product" width="70" class="me-3">
+                                        <span>Product Name 1</span>
+                                    </div>
+                                </td>
+                                <td>$99.99</td>
+                                <td>
+                                    <input type="number" value="1" class="form-control" style="width: 80px;">
+                                </td>
+                                <td>$99.99</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 2 -->
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../images/g1.jpg" alt="Product" width="70" class="me-3">
+                                        <span>Product Name 2</span>
+                                    </div>
+                                </td>
+                                <td>$49.99</td>
+                                <td>
+                                    <input type="number" value="2" class="form-control" style="width: 80px;">
+                                </td>
+                                <td>$99.98</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="col-lg-4">
+                    <div class="border p-4 rounded shadow">
+                        <h4>Summary</h4>
+                        <hr>
+                        <p>Subtotal: <span class="float-end">$199.97</span></p>
+                        <p>Shipping: <span class="float-end">$10.00</span></p>
+                        <hr>
+                        <h5>Total: <span class="float-end text-success">$209.97</span></h5>
+                        <button class="btn btn-primary btn-lg w-100 mt-4" data-bs-toggle="modal"
+                            data-bs-target="#checkoutModal">
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+                <!-- Footer Content (same as other pages) -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">MyStore</h5>
+                    <p>We offer the best products at the best prices. Explore our store to find amazing deals.</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Electronics</a></p>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Fashion</a></p>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Home & Kitchen</a></p>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Accessories</a></p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Useful Links</h5>
+                    <p><a href="about.html" class="text-white" style="text-decoration: none;">About Us</a></p>
+                    <p><a href="contact-us.html" class="text-white" style="text-decoration: none;">Contact Us</a></p>
+                    <p><a href="../php-admin/index.php" class="text-white" style="text-decoration: none;">Admin
+                            Panel</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Privacy Policy</a></p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                    <p><i class="fas fa-home mr-3"></i> 123 Street, City, Country</p>
+                    <p><i class="fas fa-envelope mr-3"></i> info@mystore.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +123 456 7890</p>
+                    <p><i class="fas fa-print mr-3"></i> +123 456 7891</p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="row align-items-center mt-4">
+                <div class="col-md-7 col-lg-12 text-center">
+                    <p class="text-white">© 2025 MyStore. All rights reserved.</p>
+                </div>
+                <div class="col-md-5 col-lg-4 mx-auto">
+                    <!-- Social Media Links (Optional) -->
+                    <div class="text-center">
+                        <a href=" #" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment & Order Modal -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title" id="checkoutModalLabel">Complete Your Order</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Billing Information -->
+                            <div class="col-md-6">
+                                <h5>Billing Information</h5>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="fullName" placeholder="Full Name">
+                                    <label for="fullName">Full Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                    <label for="email">Email address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="address" placeholder="123 Main St">
+                                    <label for="address">Address</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="city" placeholder="City">
+                                    <label for="city">City</label>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <div class="form-floating mb-3 w-50">
+                                        <input type="text" class="form-control" id="zip" placeholder="Zip Code">
+                                        <label for="zip">Zip Code</label>
+                                    </div>
+                                    <div class="form-floating mb-3 w-50">
+                                        <input type="text" class="form-control" id="country" placeholder="Country">
+                                        <label for="country">Country</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Information -->
+                            <div class="col-md-6">
+                                <h5>Payment Information</h5>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="cardName" placeholder="Name on Card">
+                                    <label for="cardName">Name on Card</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="cardNumber"
+                                        placeholder="XXXX XXXX XXXX XXXX">
+                                    <label for="cardNumber">Card Number</label>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <div class="form-floating mb-3 w-50">
+                                        <input type="text" class="form-control" id="expiry" placeholder="MM/YY">
+                                        <label for="expiry">Expiry</label>
+                                    </div>
+                                    <div class="form-floating mb-3 w-50">
+                                        <input type="text" class="form-control" id="cvv" placeholder="CVV">
+                                        <label for="cvv">CVV</label>
+                                    </div>
+                                </div>
+
+                                <!-- Order Summary -->
+                                <div class="border-top pt-3 mt-4">
+                                    <h6 class="text-muted">Order Summary</h6>
+                                    <p class="mb-1 d-flex justify-content-between">
+                                        <span>Subtotal</span> <span>$199.97</span>
+                                    </p>
+                                    <p class="mb-1 d-flex justify-content-between">
+                                        <span>Shipping</span> <span>$10.00</span>
+                                    </p>
+                                    <p class="mb-0 d-flex justify-content-between fw-bold">
+                                        <span>Total</span> <span class="text-success">$209.97</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-success">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="../js/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

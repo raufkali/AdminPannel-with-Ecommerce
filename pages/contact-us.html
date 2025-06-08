@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MyStore</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">MyStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="./contact-us.html">Contact</a></li>
+
+                    <li class="nav-item nav-login-btn "><a class="nav-link login-btn" href="./auth.html">Login |
+                            Signup</a>
+                    </li>
+
+                    <!-- Cart Icon -->
+                    <li class="nav-item cart  ms-3">
+                        <a class="btn btn-warning position-relative " href="./cart.html">
+                            <i class="fas fa-shopping-cart "></i> Cart
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                2
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="py-5 text-center" style="background-color:  rgb(0, 49, 224);">
+        <div class="container text-white">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead">We'd love to hear from you. Please reach out with any questions, comments, or feedback!</p>
+        </div>
+    </section>
+
+    <!-- Contact Form and Info -->
+    <section class="">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- Contact Form -->
+                <div class="col-lg-7 mb-4 p-5">
+                    <h2>Send Us a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="subject" placeholder="Enter subject" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-5 p-5 text-white" style="background-color: rgb(0, 0, 105);">
+                    <h2>Contact Information</h2>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span class="ms-2">123 Main Street, City, Country</span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span class="ms-2">+123 456 7890</span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span class="ms-2">support@mystore.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <i class="fas fa-clock text-primary"></i>
+                            <span class="ms-2">Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-md-left">
+            <div class="row text-md-left">
+                <!-- Footer Content (same as other pages) -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">MyStore</h5>
+                    <p>We offer the best products at the best prices. Explore our store to find amazing deals.</p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Products</h5>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Electronics</a></p>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Fashion</a></p>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Home & Kitchen</a></p>
+                    <p><a href="products.html" class="text-white" style="text-decoration: none;">Accessories</a></p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Useful Links</h5>
+                    <p><a href="about.html" class="text-white" style="text-decoration: none;">About Us</a></p>
+                    <p><a href="contact-us.html" class="text-white" style="text-decoration: none;">Contact Us</a></p>
+                    <p><a href="../php-admin/index.php" class="text-white" style="text-decoration: none;">Admin
+                            Panel</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Privacy Policy</a></p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
+                    <p><i class="fas fa-home mr-3"></i> 123 Street, City, Country</p>
+                    <p><i class="fas fa-envelope mr-3"></i> info@mystore.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> +123 456 7890</p>
+                    <p><i class="fas fa-print mr-3"></i> +123 456 7891</p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="row align-items-center mt-4">
+                <div class="col-md-7 col-lg-12 text-center">
+                    <p class="text-white">© 2025 MyStore. All rights reserved.</p>
+                </div>
+                <div class="col-md-5 col-lg-4 mx-auto">
+                    <!-- Social Media Links (Optional) -->
+                    <div class="text-center">
+                        <a href=" #" class="text-white me-4"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-4"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/userLogin.js"></script>
+    <script src="../js/script.js"></script>
+
+
+</body>
+
+</html>

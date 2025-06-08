@@ -1,0 +1,197 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="login.html" class="btn btn-danger">Yes, Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex d-flex col-9 me-4 mt-3  ms-auto">
+        <!-- Sidebar -->
+        <div class="sidebar bg-dark text-white p-3 vh-100" style="width: 250px;">
+            <h4 class="text-center mb-4">Admin Panel</h4>
+            <hr>
+
+            <ul class="sidebar-nav nav flex-column">
+                <li class="nav-item"><a class="nav-link text-white active" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="users.html">Users</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="add-user.html">Add User</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="products.html">Products</a></li>
+                <!-- Added -->
+
+                <li class="nav-item"><a class="nav-link text-white" href="settings.html">Settings</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="#" data-bs-toggle="modal"
+                        data-bs-target="#logoutModal">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-2">
+
+            <!-- Top Navbar -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Dashboard</h2>
+                <div>
+                    <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#logoutModal">Logout</button>
+                </div>
+            </div>
+            <hr>
+
+
+
+            <!-- Chart Section -->
+            <div class="row">
+                <div class="col-6">
+                    <!-- Optional Table Section -->
+                    <div>
+                        <h4>Recent Activities</h4>
+                        <table class="table table-striped table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>User</th>
+                                    <th>Action</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>Added a new user</td>
+                                    <td>2025-04-23</td>
+                                </tr>
+                                <tr>
+                                    <td>Admin2</td>
+                                    <td>Changed settings</td>
+                                    <td>2025-04-22</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card border-0 stats-card bg-light p-3">
+                        <h5 class="text-center mb-3">Users Overview</h5>
+                        <div>
+                            <canvas id="userStatsChart" style="width: 200px; max-height: 200px;" height="100"></canvas>
+                            <!-- Cards Section -->
+                            <div class="row g-2 mt-2 d-flex align-items-center">
+                                <div class="col-4">
+                                    <div class="card bg-light-green border-0">
+                                        <div class="card-body stats-cards text-center">
+                                            <h5>Total Users</h5>
+                                            <p>105</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="card bg-sky-blue border-0">
+                                        <div class="card-body stats-cards text-center">
+                                            <h5>Admins</h5>
+                                            <p>5</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="card bg-light-orange border-0">
+                                        <div class="card-body stats-cards text-center">
+                                            <h5>Staff</h5>
+                                            <p>12</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Bootstrap + Chart.js + Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Chart Initialization -->
+    <script>
+        const ctx = document.getElementById('userStatsChart').getContext('2d');
+
+        // Create the Chart.js instance
+        const userStatsChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Admins', 'Staff', 'Others'], // Categories for the chart
+                datasets: [{
+                    label: 'User Breakdown',
+                    data: [3, 12, 85], // These are the target values for each category
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.7)',  // Color for Admins
+                        'rgba(255, 206, 86, 0.7)',  // Color for Staff
+                        'rgba(153, 102, 255, 0.7)'  // Color for Others
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',  // Border color for Admins
+                        'rgba(255, 206, 86, 1)',  // Border color for Staff
+                        'rgba(153, 102, 255, 1)'  // Border color for Others
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,  // Makes the chart responsive to different screen sizes
+                plugins: {
+                    legend: {
+                        position: 'right'  // Position the legend to the right of the chart
+                    },
+                    tooltip: {
+                        enabled: true  // Enable tooltips to show data on hover
+                    }
+                },
+                animation: {
+                    duration: 2000, // Duration of the animation in milliseconds (2 seconds)
+                    easing: 'easeOutBounce', // Easing function for smooth transition
+
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

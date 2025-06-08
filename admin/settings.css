@@ -1,0 +1,87 @@
+.settings-body {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.tab-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.tab-pane {
+    display: none;
+    box-sizing: border-box;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.sub-nav-link.active {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.form-control {
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid #dc3545;
+}
+
+.form-control:focus {
+    border-color: #c82333;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.btn-primary {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-primary:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.nav-pills {
+    overflow: hidden;
+}
+
+.nav-pills .nav-link {
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.sub-nav-link {
+    color: #dc3545;
+
+}
+
+.sub-nav-link:hover {
+
+    color: #ff707e;
+}
+
+.sub-nav-link:active {
+    color: #ff707e;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.form-check-input:checked {
+    background-color: #bd2130;
+}

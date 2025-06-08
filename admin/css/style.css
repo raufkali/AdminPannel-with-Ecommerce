@@ -1,0 +1,84 @@
+.sidebar-nav .nav-item a.active {
+    background-color: rgb(109, 27, 27);
+}
+
+
+* {
+    transition: 0.5s;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1040;
+    /* stay above most elements but below modals */
+    overflow-y: auto;
+    /* scroll if needed */
+
+}
+
+.chart-cards {
+    height: 14vh;
+    width: 14vh;
+}
+
+.chart-cards h5 {
+    font-size: 2vh;
+    font-weight: bold;
+
+}
+
+.bg-silver {
+    background-color: silver;
+}
+
+.sidebar-nav .nav-item a:hover {
+    background-color: rgb(247, 116, 116);
+
+}
+
+
+.bg-light-green {
+    background-color: rgb(132, 255, 132);
+}
+
+.bg-sky-blue {
+    background-color: rgb(132, 222, 255);
+}
+
+.bg-light-pink {
+    background-color: rgb(235, 132, 255);
+}
+
+.bg-light-orange {
+    background-color: rgb(255, 208, 132);
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+
+.stats-cards h5 {
+    font-size: small;
+    font-weight: bolder;
+    margin-bottom: auto;
+}
+
+.bg-dark-red {
+    background-color: rgb(109, 27, 27);
+    color: white;
+}
+
+.bg-dark-red-btn {
+    background-color: rgb(109, 27, 27);
+    color: white;
+}
+
+.bg-dark-red-btn:hover {
+    background-color: rgb(247, 116, 116);
+    color: white;
+
+}

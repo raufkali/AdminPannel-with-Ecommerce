@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./settings.css">
+    <style>
+        .general-settings .section-settings {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .general-settings .form-label {
+            padding: 1vh;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logout Confirmation Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="login.html" class="btn btn-danger">Yes, Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar bg-dark text-white p-3 vh-100" style="width: 250px;">
+            <h4 class="text-center mb-4">Admin Panel</h4>
+            <hr>
+            <ul class="sidebar-nav nav flex-column">
+                <li class="nav-item"><a class="nav-link text-white" href="dashboard.html">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="users.html">Users</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="add-user.html">Add User</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="products.html">Products</a></li>
+                <!-- Added -->
+
+                <!-- Active link -->
+                <li class="nav-item"><a class="nav-link text-white active" href="settings.html">Settings</a></li>
+                <li class="nav-item"><a class="nav-link text-danger" href="#" data-bs-toggle="modal"
+                        data-bs-target="#logoutModal">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="col-9 ms-auto me-5">
+            <div class="flex-grow-1 p-4 ">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Settings</h2>
+                    <div>
+                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#logoutModal">Logout</button>
+                    </div>
+                </div>
+                <hr>
+                <!-- Nav Pills for tabs -->
+                <div class="settings-body">
+                    <ul class="nav bg-light nav-pills py-2 d-flex align-items-center justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link sub-nav-link active" id="general-tab" data-bs-toggle="pill"
+                                href="#general">General</a>
+                            <hr>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link sub-nav-link" id="notifications-tab" data-bs-toggle="pill"
+                                href="#notifications">Notifications</a>
+                            <hr>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link sub-nav-link" id="password-tab" data-bs-toggle="pill"
+                                href="#password">Change
+                                Password</a>
+                            <hr>
+
+                        </li>
+                    </ul>
+                    <!-- Tab Content -->
+                    <div class="tab-content pt-0 bg-light rounded-0">
+                        <!-- General Settings Tab -->
+                        <div class="tab-pane mx-5 fade show active" id="general">
+                            <h5>General Settings</h5>
+                            <hr>
+                            <form class="general-settings">
+                                <div class="mb-3 section-settings">
+                                    <label for="site-name" class="form-label">Site
+                                        Name:</label>
+                                    <input type="text" class="form-control" id="site-name" value="Admin Panel">
+                                </div>
+                                <div class="mb-3 section-settings">
+                                    <label for="site-url" class="form-label">Site URL:</label>
+                                    <input type="text" class="form-control" id="site-url"
+                                        value="https://adminpanel.com">
+                                </div>
+                                <div class="mb-3 section-settings">
+                                    <label for="site-email" class="form-label ">Admin Email:</label>
+                                    <input type="email" class="form-control" id="site-email"
+                                        value="admin@adminpanel.com">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Notifications Settings Tab -->
+                        <div class="tab-pane fade mx-5" id="notifications">
+                            <h5>Notifications Settings</h5>
+                            <hr>
+                            <form>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="email-notifications" checked>
+                                    <label class="form-check-label" for="email-notifications">Email
+                                        Notifications</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sms-notifications" checked>
+                                    <label class="form-check-label" for="sms-notifications">SMS Notifications</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Change Password Tab -->
+                        <div class="tab-pane fade mx-5" id="password">
+                            <h5>Change Password</h5>
+                            <hr>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="current-password"
+                                        placeholder="Enter your current password">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="new-password"
+                                        placeholder="Enter new password">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" class="form-control" id="confirm-password"
+                                        placeholder="Confirm new password">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Change Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
